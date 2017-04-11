@@ -1,7 +1,7 @@
-## Website Performance Optimization - P4
 # Udacity front-end nanodegree
+## Website Performance Optimization - P4
 
-* <a href="https://frontend-nanodegree-mobile-portfoli.netlify.com/" target="_blank">Live Link</a>
+* <a href="https://frontend-nanodegree-mobile-portfoli.netlify.com/" target="_blank">Live Project Link</a>
 
 
 HOW TO INSTALL
