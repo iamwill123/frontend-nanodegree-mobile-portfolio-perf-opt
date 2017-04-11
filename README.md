@@ -1,5 +1,53 @@
-# William Pei Yuan Website Perf Optimization Project
+## Website Performance Optimization - P4
+# Udacity front-end nanodegree
 
+* <a href="https://frontend-nanodegree-mobile-portfoli.netlify.com/" target="_blank">Live Link</a>
+
+
+HOW TO INSTALL
+==============
+- Clone Repo or download the zip file
+- Open index.html for the main website
+- Navigate to views/pizza.html for the pizza page.
+
+GENERAL OPTIMIZATIONS
+=====================
+Shortening the Critical Rendering Path (unblock critical rendering path):
+- Used the async google analytics script
+- Added media="print" to the css/print link
+- Inlined & minified perfmatters.js
+- Inlined & minified style.css
+- Google fonts moved to footer area
+
+Image Optimization:
+- Optimized all the images in img/ further using ImageOptim app, helps strip its meta info
+- Resized pizzeria.jpg, created a new 100x100 pizza image and resized/cropped pizza.png. Also optimized using ImageOptim app.
+
+PIZZA PAGE OPTIMIZATIONS
+========================
+Overview of changes:
+- Replaced document.querySelectorAll with getElementById & getElementsByClassName respectively.
+
+Render consistent frame-rate at 60fps when scrolling:
+- var movingPizzas1 = document.getElementById("movingPizzas1"); moved outside the updatePositions function since it doesn't need to be called every time we scroll.
+- Implemented requestAnimationFrame to updatePositions function
+
+Resize pizzas is less than 5 ms:
+- Created a new width array and pushed new with generated from the for loop
+- Separated the original loop into 2 for loops
+- The second for loop to updates the new widths and applies it to the pizza container.
+- minifed main.js
+
+Details of optimization are commented out in the main.js file.
+
+CodeKit
+=======
+
+- I used codekit to minify all my files and changed the routing for the tags respectively to target the -min.css or -min.js files.
+- The files are set to run on the minified files for maximum load / render speed.
+
+-----------------------------------------------------
+### Course requirements below
 -----------------------------------------------------
 
 ## Website Performance Optimization portfolio project

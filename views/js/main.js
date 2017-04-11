@@ -555,5 +555,5 @@ document.addEventListener('DOMContentLoaded', function() {
     elem.style.top = (Math.floor(i / cols) * s) + 'px';
     movingPizzas1.appendChild(elem); // changed to get elemenet by id
   }
-  updatePositions();
+  requestAnimationFrame(updatePositions); // requestion animation frame http://www.html5rocks.com/en/tutorials/speed/animations/
 });
