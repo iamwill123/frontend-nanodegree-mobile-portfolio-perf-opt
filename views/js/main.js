@@ -454,8 +454,8 @@ var resizePizzas = function(size) {
     var randomPizzaContainerLength = document.getElementsByClassName("randomPizzaContainer").length; // get container & store container in variable to be passed.
     var randomPizzaContainer = document.getElementsByClassName("randomPizzaContainer"); // get container & store container in variable to be passed.
     var newWidth = []; // array to store new the widths
-    console.log(randomPizzaContainerLength);
-    console.log(newWidth);
+    // console.log(randomPizzaContainerLength); // 100 pizzas
+    // console.log(newWidth);
 
     // calculate newWidth based on determineDx function, then to be pushed into the newWidth's array
     for (var i = 0; i < randomPizzaContainerLength; i++) {
@@ -551,8 +551,10 @@ document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
   var movingPizzas1 = document.getElementById("movingPizzas1"); // moved outside of the for loop so that it doesn't get called every time the loop runs
+  var numberOfPizzas = window.innerHeight / s * cols; // suggestions to calculate the number of pizzas dynamically
+  console.log(numberOfPizzas)
   // Cut down on the amount of pizzas, unecessary to have so many & produced a lot of jank, 50 is the least amount i feel would be best
-  for (var i = 0; i < 40; i++) {
+  for (var i = 0; i < numberOfPizzas; i++) {
     var elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza100x100.png"; // new pizza image size for more optimization
