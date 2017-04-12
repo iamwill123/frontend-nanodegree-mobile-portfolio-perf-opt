@@ -40,6 +40,9 @@ Resize pizzas is less than 5 ms:
 
 Details of optimization are commented out in the main.js file.
 
+Udacity suggested updates:
+- refactored main.js file for the pizza page, the for loop to accept a dynamically generated number of pizzas, changPizza size function, and the updatePosition function.
+
 CodeKit
 =======
 
