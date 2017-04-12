@@ -454,10 +454,12 @@ var resizePizzas = function(size) {
     var randomPizzaContainerLength = document.getElementsByClassName("randomPizzaContainer").length; // get container & store container in variable to be passed.
     var randomPizzaContainer = document.getElementsByClassName("randomPizzaContainer"); // get container & store container in variable to be passed.
     var newWidth = []; // array to store new the widths
+    console.log(randomPizzaContainerLength);
+    console.log(newWidth);
+
     // calculate newWidth based on determineDx function, then to be pushed into the newWidth's array
     for (var i = 0; i < randomPizzaContainerLength; i++) {
-      var dx = determineDx(randomPizzaContainer[i], size);
-      newWidth.push((randomPizzaContainer[i].offsetWidth + dx) + 'px'); // push into newWidth array
+      newWidth.push((randomPizzaContainer[i].offsetWidth + determineDx(randomPizzaContainer[i], size)) + 'px'); // push into newWidth array
     }
     // originally within the same for loop however that added tremendous load & time to the resize pizza time
     // Avg resize pizza time went from 180ms to an average of 2ms. Tremendous time saving & jank reduction.
