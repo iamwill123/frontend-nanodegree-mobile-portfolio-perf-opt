@@ -518,12 +518,17 @@ function updatePositions() {
   var itemsLength = items.length;
   var phaseNumber = (document.body.scrollTop / 1250); // calculate this once
 
+  // Due to the mod 5 operator, there are only 5 different values for the phase. Whichever the value of i, i%5 is always a value from 0 to 4. So, calculating phase values inside the main loop is a waste of resources.
+  // refactored according to suggestions from reviewer.
+  var phase = [];
+  // console.log(phase);
+
+  for (var i = 0; i < 5; i++) {
+      phase.push(Math.sin(phaseNumber + i) * 100);
+  }
+
   for (var i = 0; i < itemsLength; i++) {
-    // var phase = Math.sin((document.body.scrollTop / 1250) + (i % 5)); <-- causing a lot of jank, calculating this every time the loop ran
-    var phase = Math.sin( phaseNumber + (i % 5));
-    // console.log(phase);
-    // items[i].style.left = items[i].basicLeft + 100 * phase + 'px'; <-- this is not as fast as using translateX
-    items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
+      items[i].style.left = items[i].basicLeft + phase[i%5] + 'px';
   }
 
   // User Timing API to the rescue again. Seriously, it's worth learning.
